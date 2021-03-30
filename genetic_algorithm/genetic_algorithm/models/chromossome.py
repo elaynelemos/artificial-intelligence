@@ -1,3 +1,6 @@
+import random
+
+
 class Chromossome:
     def __init__(self, genes):
         self.genes = genes
@@ -24,7 +27,7 @@ class Chromossome:
         genes_len = len(self.genes)
 
         for i in range(genes_len):
-            if np.random.random() > mutation_rate:
+            if random.random() > mutation_rate:
                 pass
             self.genes[i] = str((int(chromossome.genes[i]) + 1)%2)
 

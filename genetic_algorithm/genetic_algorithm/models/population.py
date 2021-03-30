@@ -1,5 +1,6 @@
-import numpy as np
+import random
 from chromossome import Chromossome
+
 
 class Population:
     def __init__(self, n_chromossomes):
@@ -47,9 +48,9 @@ class Population:
     def tournment(self):
         pop_index = list(range(self.population_size))
         parents = []
-        chromossome = np.random.randomint(pop_size)
+        chromossome = random.randomint(pop_size)
         parents = parents.append(self.chromossomes[pop_index.pop(chromossome)])
-        chromossome = np.random.randomint(pop_size - 1)
+        chromossome = random.randomint(pop_size - 1)
         parents = parents.append(self.chromossomes[pop_index.pop(chromossome)])
 
         if parents[0].fit < parents[1].fit:
@@ -66,11 +67,11 @@ class Population:
             if parent not in parents:
                 parents.append(parent)
 
-        if np.random.random() > cross_index:
+        if random.random() > cross_index:
             return parents
 
         children = ['', '']
-        slices = np.random.randomint(1, len(parents[0].genes), slices)
+        slices = random.randomint(1, len(parents[0].genes), slices)
         slices.insert(0, 0)
         slices.insert(-1, -1)
 
