@@ -23,14 +23,14 @@ def kept_fit(generations):
     average_fits = []
     best_fits = []
 
-    if len(generations) < 5:
+    if len(generations) < 4:
         return False
 
     for generation in generations:
         average_fits.append(generation.average_fit())
         best_fits.append(generation.best_fit())
 
-    init = len(generations) - 5
+    init = len(generations) - 4
     average = average_fits[init]
     best = best_fits[init]
     for i in range(init + 1, len(average_fits)):
@@ -59,4 +59,4 @@ def print_generation(gen_index, generation):
 
 
 if __name__ == '__main__':
-    genetic_algorithm(10)
+    genetic_algorithm(5)
