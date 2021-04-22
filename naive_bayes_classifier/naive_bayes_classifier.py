@@ -38,8 +38,8 @@ class NaiveBayesClassifier:
 
         return ocurrences / self.classified_data['meta_data']['data_length']
 
-    def dependent_probability(self, feature, status, play):
-        condition_count = self.classified_data[feature][(status, play)]
+    def dependent_probability(self, feature, state, play):
+        condition_count = self.classified_data[feature][(state, play)]
 
         return condition_count / self.classified_data['meta_data'][play]
 
